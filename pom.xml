@@ -107,6 +107,8 @@
         <httpclient.version>4.3.2</httpclient.version>
         <junit.version>4.11</junit.version>
         <mockito-all.version>1.9.5</mockito-all.version>
+        <spring-data-jpa.version>1.6.4.RELEASE</spring-data-jpa.version>
+        <spring-data-jdbc-core.version>1.0.0.RELEASE</spring-data-jdbc-core.version>
     </properties>
 
     <profiles>
@@ -462,6 +464,27 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-test</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jpa</artifactId>
+                <version>${spring-data-jpa.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.data</groupId>
+                <artifactId>spring-data-jdbc-core</artifactId>
+                <version>${spring-data-jdbc-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.mysema.querydsl</groupId>
+                <artifactId>querydsl-jpa</artifactId>
+                <version>${querydsl.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.mysema.querydsl</groupId>
+                <artifactId>querydsl-apt</artifactId>
+                <version>${querydsl.version}</version>
             </dependency>
 
             <!-- Spring Security -->
