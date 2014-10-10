@@ -21,7 +21,7 @@
         <java.compiler.version>1.7</java.compiler.version>
         <super-pom.version>${project.version}</super-pom.version>
         <jersey.version>1.18</jersey.version>
-        <spring.version>3.2.4.RELEASE</spring.version>
+        <spring.version>4.0.6.RELEASE</spring.version>
         <camel.version>2.13.0</camel.version>
         <jackson.version>1.9.7</jackson.version>
         <activemq.version>5.7.0</activemq.version>
