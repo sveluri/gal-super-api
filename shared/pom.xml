@@ -84,5 +84,9 @@
             <groupId>com.sun.jersey</groupId>
             <artifactId>jersey-servlet</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.damnhandy</groupId>
+            <artifactId>handy-uri-templates</artifactId>
+        </dependency>
     </dependencies>
 </project>
