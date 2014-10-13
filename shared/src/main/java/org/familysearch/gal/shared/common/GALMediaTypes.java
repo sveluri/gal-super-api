@@ -15,17 +15,17 @@ import org.springframework.util.StringUtils;
 /**
  * MediaTypes for GAL API
  */
-public class GALV1MediaTypes {
+public class GALMediaTypes {
 
     private static final String APPLICATION = "application";
-    private static final String XML = "vnd.fs-gal-v1+xml";
-    private static final String JSON = "vnd.fs-gal-v1+json";
+    private static final String XML = "vnd.fs-gal+xml";
+    private static final String JSON = "vnd.fs-gal+json";
 
-    public static final MediaType APPLICATION_GAL_V1_XML_TYPE = new MediaType(APPLICATION, XML);
-    public static final MediaType APPLICATION_GAL_V1_JSON_TYPE = new MediaType(APPLICATION, JSON);
+    public static final MediaType APPLICATION_GAL_XML_TYPE = new MediaType(APPLICATION, XML);
+    public static final MediaType APPLICATION_GAL_JSON_TYPE = new MediaType(APPLICATION, JSON);
 
-    public static final String APPLICATION_GAL_V1_XML = "application/vnd.fs-gal-v1+xml";
-    public static final String APPLICATION_GAL_V1_JSON = "application/vnd.fs-gal-v1+json";
+    public static final String APPLICATION_GAL_XML = "application/vnd.fs-gal+xml";
+    public static final String APPLICATION_GAL_JSON = "application/vnd.fs-gal+json";
 
     public static final List<Variant> VARIANTS;
 
@@ -34,19 +34,19 @@ public class GALV1MediaTypes {
                                       APPLICATION_JSON_TYPE,
                                       APPLICATION_ATOM_XML_TYPE,
                                       APPLICATION_FORM_URLENCODED_TYPE,
-                                      APPLICATION_GAL_V1_XML_TYPE,
-                                      APPLICATION_GAL_V1_JSON_TYPE,
+                                      APPLICATION_GAL_XML_TYPE,
+                                      APPLICATION_GAL_JSON_TYPE,
                                       WILDCARD_TYPE)
             .add()
             .build();
     }
 
     public static Variant newXMLVariant() {
-        return new Variant(APPLICATION_GAL_V1_XML_TYPE, null, null);
+        return new Variant(APPLICATION_GAL_XML_TYPE, null, null);
     }
 
     public static Variant newJSONVariant() {
-        return new Variant(APPLICATION_GAL_V1_JSON_TYPE, null, null);
+        return new Variant(APPLICATION_GAL_JSON_TYPE, null, null);
     }
 
     public static Variant primaryVariant(Request request, String type) {
