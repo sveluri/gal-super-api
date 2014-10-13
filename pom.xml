@@ -109,6 +109,7 @@
         <mockito-all.version>1.9.5</mockito-all.version>
         <spring-data-jpa.version>1.6.4.RELEASE</spring-data-jpa.version>
         <spring-data-jdbc-core.version>1.0.0.RELEASE</spring-data-jdbc-core.version>
+        <maven-jar-plugin.version>2.5</maven-jar-plugin.version>
     </properties>
 
     <profiles>
@@ -330,6 +331,18 @@
                     <artifactId>maven-project-info-reports-plugin</artifactId>
                     <version>2.7</version>
                 </plugin>
+                <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>${maven-jar-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             </plugins>
         </pluginManagement>
     </build>
