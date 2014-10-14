@@ -22,6 +22,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import static org.familysearch.gal.shared.common.FeedConstants.PAGE;
+import static org.familysearch.gal.shared.common.FeedConstants.PAGE_SIZE;
+import static org.familysearch.gal.shared.common.FeedConstants.TYPE;
+
 /**
  * Generic Feed Builder to create ATOM feed for service response
  *
@@ -92,15 +96,15 @@ public abstract class DefaultFeedBuilder<M, R> implements FeedBuilder<M, R> {
         if (totalRows > pageSize) {
             if (pageNumber > 1) {
                 Link firstPage = templateLinkBuilder
-                    .param("page", String.valueOf(1))
-                    .param("pagesize", String.valueOf(feedOptions.getPage().getPageSize()))
+                    .param(PAGE, String.valueOf(1))
+                    .param(PAGE_SIZE, String.valueOf(feedOptions.getPage().getPageSize()))
                     .build();
                 String hrefToFirstPage = firstPage.getHref();
                 feed.addLink(hrefToFirstPage, Relation.FIRST.rel()).setMimeType(MediaType.APPLICATION_ATOM_XML);
 
                 Link previousPage = templateLinkBuilder
-                    .param("page", String.valueOf(feedOptions.getPage().getPageNumber() - 1))
-                    .param("pagesize", String.valueOf(feedOptions.getPage().getPageSize()))
+                    .param(PAGE, String.valueOf(feedOptions.getPage().getPageNumber() - 1))
+                    .param(PAGE_SIZE, String.valueOf(feedOptions.getPage().getPageSize()))
                     .build();
                 String hrefToPreviousPage = previousPage.getHref();
                 feed.addLink(hrefToPreviousPage, Relation.PREVIOUS.rel()).setMimeType(MediaType.APPLICATION_ATOM_XML);
@@ -108,16 +112,16 @@ public abstract class DefaultFeedBuilder<M, R> implements FeedBuilder<M, R> {
 
             if (totalRows > pageNumber * pageSize) {
                 Link linkToNextPage = templateLinkBuilder
-                    .param("page", String.valueOf(feedOptions.getPage().getPageNumber() + 1))
-                    .param("pagesize", String.valueOf(feedOptions.getPage().getPageSize()))
+                    .param(PAGE, String.valueOf(feedOptions.getPage().getPageNumber() + 1))
+                    .param(PAGE_SIZE, String.valueOf(feedOptions.getPage().getPageSize()))
                     .build();
                 String hrefToNextPage = linkToNextPage.getHref();
                 feed.addLink(hrefToNextPage, Relation.NEXT.rel()).setMimeType(MediaType.APPLICATION_ATOM_XML);
 
                 Link linkToLastPage = templateLinkBuilder
                     // We can also use Math.ceil(totalRows/(float)pageSize) to get highest rounded off number
-                    .param("page", String.valueOf((totalRows + (pageSize - 1)) / pageSize))
-                    .param("pagesize", String.valueOf(feedOptions.getPage().getPageSize()))
+                    .param(PAGE, String.valueOf((totalRows + (pageSize - 1)) / pageSize))
+                    .param(PAGE_SIZE, String.valueOf(feedOptions.getPage().getPageSize()))
                     .build();
                 String hrefToLastPage = linkToLastPage.getHref();
                 feed.addLink(hrefToLastPage, Relation.LAST.rel())
@@ -149,7 +153,7 @@ public abstract class DefaultFeedBuilder<M, R> implements FeedBuilder<M, R> {
             LOGGER.error("Unable to create entry ", e);
             throw new ServiceRESTException("Unable to create entry :", e);
         }
-        summary.setAttributeValue("type", MediaType.APPLICATION_JSON);
+        summary.setAttributeValue(TYPE, MediaType.APPLICATION_JSON);
     }
 
     /**
