@@ -269,7 +269,6 @@
                                     -Dcom.sun.management.jmxremote.ssl=false
                                     -Dcom.sun.management.jmxremote.authenticate=false
                                     -Dcom.sun.management.jmxremote.port=${cargo.jmx.port}
-                                    -Dspring.profiles.active=local,postgres
                                 </cargo.jvmargs>
                                 <cargo.logging>medium</cargo.logging>
                                 <cargo.port.offset>${cargo.port.offset}</cargo.port.offset>
