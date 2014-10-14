@@ -18,7 +18,9 @@ public enum Relation {
     NEXT("next", "Next page of a paged list"),
     PARENT("parent", "Link to the parent resource"),
     CHILDREN("children", "Link to a list of child resources"),
-
+    RELATIONS_APPLICATIONS("relations/applications", "List of applications"),
+    RELATIONS_APPLICATION("relations/application", "Application resource"),
+    
     @Deprecated
     DEPRECATED_SAMPLE("sample", "Deprecated sample for test cases");
 
