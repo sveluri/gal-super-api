@@ -52,5 +52,25 @@
             <groupId>net.sf.dozer</groupId>
             <artifactId>dozer</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-core-asl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-atom-abdera</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>org.json</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>jackson-mapper-asl</artifactId>
+        </dependency>
     </dependencies>
 </project>
