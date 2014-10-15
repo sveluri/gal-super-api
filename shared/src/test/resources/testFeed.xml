@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:idx="http://familysearch.org/gal">
+    <updated>2013-10-08T03:27:00.349Z</updated>
+    <author>
+        <name>FamilySearch</name>
+    </author>
+    <title type="text">Service discovery document</title>
+    <id>urn:rel:service</id>
+    <entry idx:rel="relations/uri/rfc6570">
+        <id>urn:rel:service/relations/uri/rfc6570</id>
+        <updated>2013-10-08T03:27:00.349Z</updated>
+        <title type="text">RFC 6570</title>
+        <content type="text/html" src="http://tools.ietf.org/html/rfc6570"/>
+        <summary type="text">RFC 6570 describes the scheme used by this service for URI templates.</summary>
+    </entry>
+</feed>
