@@ -22,6 +22,6 @@ public class GALQNames {
      * @param feed ATOM feed
      */
     public static void declareNamespace(Feed feed) {
-        feed.declareNS(NAMESPACE, "idx");
+        feed.declareNS(NAMESPACE, "gal");
     }
 }
